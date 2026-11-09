@@ -104,3 +104,28 @@ p {
   font-size: 18px;
   letter-spacing: 0.03em;
 }
+
+
+/* ｼﾞｭﾘﾏﾌのお部屋 */
+.julyMuff-room {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+/* ｼﾞｭﾘﾏﾌ本体 */
+.julyMuff {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  image-rendering: pixelated;
+}
+
+/* スマホ用 */
+@media (max-width: 600px) {
+  .julyMuff {
+    width: 144px;
+  }
+}
+
