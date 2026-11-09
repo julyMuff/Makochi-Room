@@ -16,7 +16,9 @@ header {
 /* ナビゲーション */
 nav {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  gap: 24px;
+  padding: 10px;
 }
 
 /* ナビゲーション内のリンク */
