@@ -1,8 +1,23 @@
 
-/* Webフォントを読み込む */
+
+/* ========================================
+   MAKOCHI-ROOM / STYLE.CSS
+======================================== */
+
+
+/* ========================================
+   01. WEB FONTS
+   フォントの読み込み
+======================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Raleway:wght@300;400;500;600&display=swap');
 
-/* サイト共通の色 */
+
+/* ========================================
+   02. GLOBAL SETTINGS
+   サイト共通の色・基本設定
+======================================== */
+
 :root {
   --background: #b9a18e;
   --text: #302c29;
@@ -11,7 +26,6 @@
   --tab: #ffffff;
 }
 
-/* ページ全体 */
 body {
   margin: 0;
   background-color: var(--background);
@@ -22,13 +36,23 @@ body {
   line-height: 1.8;
 }
 
-/* ヘッダー */
+
+/* ========================================
+   03. HEADER
+   ヘッダー
+======================================== */
+
 header {
   background-color: var(--header);
   padding-top: 24px;
 }
 
-/* ナビゲーション */
+
+/* ========================================
+   04. NAVIGATION
+   ナビゲーション
+======================================== */
+
 nav {
   display: flex;
   justify-content: center;
@@ -37,7 +61,6 @@ nav {
   background-color: var(--tab);
 }
 
-/* ナビゲーションのリンク */
 nav a {
   color: var(--text);
   font-family: "Raleway", sans-serif;
@@ -47,17 +70,20 @@ nav a {
   text-decoration: none;
 }
 
-/* リンクに触れたとき */
 nav a:hover {
   color: var(--heading);
 }
 
-/* ページの本文 */
+
+/* ========================================
+   05. MAIN CONTENT
+   ページ本文・見出し
+======================================== */
+
 main {
   padding: 24px;
 }
 
-/* 大きな見出し */
 h1 {
   background-color: white;
   color: var(--heading);
@@ -68,7 +94,6 @@ h1 {
   padding: 8px 16px;
 }
 
-/* 通常の文章 */
 p {
   font-size: 20px;
   font-weight: 400;
@@ -77,28 +102,28 @@ p {
 }
 
 
+/* ========================================
+   06. GALLERY
+   作品一覧
+======================================== */
 
-/* ポートフォリオの作品一覧 */
 .gallery {
   columns: 2;
   column-gap: 20px;
 }
 
-/* 個々の作品カード */
 .artwork {
   margin: 0 0 20px;
   background-color: white;
   break-inside: avoid;
 }
 
-/* 作品画像 */
 .artwork img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* 作品タイトル */
 .artwork figcaption {
   padding: 20px;
   font-size: 18px;
@@ -106,13 +131,16 @@ p {
 }
 
 
-/* ｼﾞｭﾘﾏﾌのお部屋 */
+/* ========================================
+   07. JULYMUFF ROOM
+   ｼﾞｭﾘﾏﾌのお部屋
+======================================== */
+
 .julyMuff-room {
   text-align: center;
   padding: 30px 10px;
 }
 
-/* ｼﾞｭﾘﾏﾌ本体 */
 .julyMuff {
   display: block;
   width: 240px;
@@ -122,7 +150,12 @@ p {
   image-rendering: pixelated;
 }
 
-/* スマホ用 */
+
+/* ========================================
+   08. RESPONSIVE DESIGN
+   画面サイズ別の調整
+======================================== */
+
 @media (max-width: 600px) {
   .julyMuff {
     width: 144px;
