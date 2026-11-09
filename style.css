@@ -1,16 +1,26 @@
+/* 色の設定 */
+:root {
+  --background: #ffffff;
+  --text: #242424;
+  --header: #ffffff;
+  --tab: #ededed;
+}
 
 /* ページ全体 */
 body {
   margin: 0;
-  background-color: #e8edf5;
-  color: #293447;
-  font-family: sans-serif;
+  background-color:
+  var(--background);
+  color: var(--text);
+  font-family: Arial,
+    sans-serif;
 }
 
 /* 上部のヘッダー */
 header {
   padding: 20px;
-  background-color: #d5deeb;
+  background-color:
+    var(--header);
 }
 
 /* ナビゲーション */
@@ -24,8 +34,8 @@ nav {
 /* ナビゲーション内のリンク */
 nav a {
   padding: 12px 18px;
-  background-color: #293447;
-  color: white;
+  background-color: var(--tab);
+  color: var(--text);
   text-decoration: none;
   border-radius: 6px;
 }
