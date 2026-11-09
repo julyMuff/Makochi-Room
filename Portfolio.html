@@ -18,7 +18,40 @@
 
   <main>
     <h1>PORTFOLIO</h1>
-    <p>ここに作品を展示します。</p>
+    <div class="gallary">
+      <figure class="artworks">
+        <img src="無題36_20261109102829.png">
+        <figcaption>20250629_2</figcaption>
+      </figure>
+    </div>
   </main>
 </body>
 </html>
+
+
+/* ポートフォリオの作品一覧 */
+.gallery {
+  columns: 2;
+  column-gap: 20px;
+}
+
+/* 個々の作品カード */
+.artwork {
+  margin: 0 0 20px;
+  background-color: white;
+  break-inside: avoid;
+}
+
+/* 作品画像 */
+.artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 作品タイトル */
+.artwork figcaption {
+  padding: 20px;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
