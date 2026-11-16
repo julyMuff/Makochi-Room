@@ -5,8 +5,9 @@ const paintingWorks = [
   
   // 新しい作品はここに追加
   // {
-  //   src: "paintings/new-art.webp",
-  //   title: "新しい作品",
+  //   src: "paintings/wolf.webp",
+  //   title: "足跡",
+  //   alt: "雪の上に続く狼の足跡",
   //   date: "2026-11-16"
   // }
   {
