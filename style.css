@@ -210,11 +210,12 @@ p {
   padding: 5px 0;
 }
 
+
 /* 展開した詳細 */
 .changelog details p,
 .changelog details ul {
   margin: 10px 0;
-
+}
 
 /* ナビゲーションの折り返し */
 header nav {
@@ -246,8 +247,6 @@ header nav a {
   header nav a {
     font-size: 0.85rem;
   }
-}
-
 }
 
 
