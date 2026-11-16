@@ -1,13 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="ja">
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GALLERY | Makochi's Room</title>
   <link rel="stylesheet"
     href="style.css">
+<script src="gallery-data.js" defer></script>
+<script src="gallery.js" defer></script>
 </head>
+  
 <body>
   <header>
   <nav>
@@ -27,27 +31,38 @@
   <a href="#writings">writings</a>
 </nav>
 
-    
-    <section id="paintings">
+
+    <!-- 表示順 -->
+  <div class="gallery-controls">
+    <button data-sort="new">新しい順</button>
+    <button data-sort="old">古い順</button>
+    <button data-sort="random">ランダム</button>
+  </div>
+
+    <!-- イラスト -->
+  <section id="paintings">
     <h2>paintings</h2>
-      <div class="paintings">
-      <figure class="artwork">
-        <img src="無題36_20261109102829.png">
-        <figcaption>20250629_2</figcaption>
-      </figure>
-      </div>
-    </section>
-  
-    <section id="writings">
-    <h2>writings</h2>
-        <article class="writing"> 
-        <h3>鍵をかけた箱</h3>
- <p>この世界には僕だけでいい。 僕が１人でのんびりと楽しむために作ったんだ。 
-    余計なバカ子供が入ってこないよう今度は鍵をかけよう。 僕にしか分からない鍵を。 
-    僕以外にはこの世界は理解できないし見ることすら出来ない。</p>
-        </article>
-    </section>
+
+    <div id="painting-list" class="painting"></div>
+
+    <button id="more-paintings" class="more-button">
+      もっと見る
+    </button>
+  </section>
     
+
+  
+    <!-- 文章 -->
+  <section id="writings">
+    <h2>writings</h2>
+
+    <div id="writing-list" class="writing-grid"></div>
+
+    <button id="more-writings" class="more-button">
+      もっと見る
+    </button>
+  </section>
+
 </main>
 </body>
 </html>
