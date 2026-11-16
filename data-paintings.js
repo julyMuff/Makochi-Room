@@ -11,7 +11,7 @@ const paintingWorks = [
   //   date: "2026-11-16"
   // }
   {
-    src: "無題36_20261109102829.png",
+    src: "paintings/無題36_20261109102829.webp",
     title: "20250629_2",
     date: "2025-06-29"
   }, 
