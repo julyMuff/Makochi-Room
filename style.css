@@ -103,11 +103,11 @@ p {
 
 
 /* ========================================
-   06. GALLERY
-   作品一覧
+   06. painting
+   イラスト一覧
 ======================================== */
 
-.gallery {
+.painting {
   columns: 2;
   column-gap: 20px;
 }
@@ -161,4 +161,59 @@ p {
     width: 144px;
   }
 }
+
+
+/* 更新履歴全体 */
+.changelog {
+  max-width: 450px;
+  margin: 30px auto;
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* 現在のバージョン */
+.changelog > p {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 見出し */
+.changelog h3 {
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* 更新履歴を四角で囲む */
+.changelog details {
+  background-color: #f1e7db;
+  border-left: 1px solid #806d5f;
+  border-right: 1px solid #806d5f;
+  padding: 10px 15px;
+}
+
+/* 最初の項目 */
+.changelog details:first-of-type {
+  border-top: 1px solid #806d5f;
+  border-radius: 4px 4px 0 0;
+}
+
+/* 最後の項目 */
+.changelog details:last-of-type {
+  border-bottom: 1px solid #806d5f;
+  border-radius: 0 0 4px 4px;
+}
+
+/* クリックする部分 */
+.changelog summary {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+/* 展開した詳細 */
+.changelog details p,
+.changelog details ul {
+  margin: 10px 0;
+}
+
 
