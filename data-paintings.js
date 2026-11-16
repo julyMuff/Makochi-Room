@@ -15,13 +15,13 @@ const paintingWorks = [
     date: "2025-06-29"
   }, 
   {
-    src: "202012_みゅてー_20210519 - コピー.jpg",
+    src: "paintings/202012_みゅてー_20210519 - コピー.jpg.webp",
     title: "202012_みゅてー",
     date: "2020-12"
   },
 
    {
-    src: "20200920_kumo - コピー.jpg",
+    src: "paintings/20200920_kumo - コピー.jpg.webp",
     title: "20200920_kumo",
     date: "2020-09-20"
   }, 
