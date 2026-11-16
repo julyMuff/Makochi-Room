@@ -214,6 +214,40 @@ p {
 .changelog details p,
 .changelog details ul {
   margin: 10px 0;
+
+
+/* ナビゲーションの折り返し */
+header nav {
+  flex-wrap: wrap;
+  gap: 10px 24px;
+}
+
+header nav a {
+  white-space: nowrap;
+}
+
+/* 新しいページの共通レイアウト */
+.site-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.site-section section {
+  margin: 40px 0;
+}
+
+/* スマホ向け */
+@media (max-width: 600px) {
+  header nav {
+    gap: 8px 14px;
+  }
+
+  header nav a {
+    font-size: 0.85rem;
+  }
+}
+
 }
 
 
