@@ -7,20 +7,22 @@ const writingList = document.getElementById("writing-list");
 const morePaintings = document.getElementById("more-paintings");
 const moreWritings = document.getElementById("more-writings");
 
-let order = "new";
+/* 絵と文章で別々の設定 */
+let paintingOrder = "new";
+let writingOrder = "new";
+
 let paintingLimit = 8;
 let writingLimit = 6;
 
 /* 並び替え */
-function sortWorks(works) {
+function sortWorks(works, order) {
   const items = [...works];
 
   if (order === "new") {
     items.sort((a, b) => b.date.localeCompare(a.date));
   } else if (order === "old") {
     items.sort((a, b) => a.date.localeCompare(b.date));
-  } else {
-    // ランダム
+  } else if (order === "random") {
     for (let i = items.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [items[i], items[j]] = [items[j], items[i]];
@@ -43,7 +45,7 @@ function renderPaintings() {
 
     const img = document.createElement("img");
     img.src = work.src;
-    img.alt = work.title;
+    img.alt = work.alt ?? work.title;
     img.loading = "lazy";
     img.draggable = false;
 
@@ -80,45 +82,60 @@ function renderWritings() {
     writingLimit >= sortedWritings.length;
 }
 
-/* 一覧を更新 */
-function updateGallery() {
-  sortedPaintings = sortWorks(paintingWorks);
-  sortedWritings = sortWorks(writingWorks);
-
+/* 絵だけ並び替える */
+function updatePaintings() {
+  sortedPaintings = sortWorks(paintingWorks, paintingOrder);
   renderPaintings();
+}
+
+/* 文章だけ並び替える */
+function updateWritings() {
+  sortedWritings = sortWorks(writingWorks, writingOrder);
   renderWritings();
 }
 
-/* 表示順ボタン */
-document.querySelectorAll("[data-sort]").forEach(button => {
+/* 絵の並び替えボタン */
+document.querySelectorAll(
+  "#painting-controls [data-sort]"
+).forEach(button => {
   button.addEventListener("click", () => {
-    order = button.dataset.sort;
+    paintingOrder = button.dataset.sort;
     paintingLimit = 8;
-    writingLimit = 6;
-
-    updateGallery();
+    updatePaintings();
   });
 });
 
-/* もっと見る */
+/* 文章の並び替えボタン */
+document.querySelectorAll(
+  "#writing-controls [data-sort]"
+).forEach(button => {
+  button.addEventListener("click", () => {
+    writingOrder = button.dataset.sort;
+    writingLimit = 6;
+    updateWritings();
+  });
+});
+
+/* 絵をもっと見る */
 morePaintings.addEventListener("click", () => {
   paintingLimit += 8;
   renderPaintings();
 });
 
+/* 文章をもっと見る */
 moreWritings.addEventListener("click", () => {
   writingLimit += 6;
   renderWritings();
 });
 
-/* 画像の右クリックを禁止 */
+/* 画像の右クリック禁止 */
 paintingList.addEventListener("contextmenu", event => {
   if (event.target.closest("img")) {
     event.preventDefault();
   }
 });
 
-/* 画像のドラッグを禁止 */
+/* 画像のドラッグ禁止 */
 paintingList.addEventListener("dragstart", event => {
   if (event.target.closest("img")) {
     event.preventDefault();
@@ -126,4 +143,5 @@ paintingList.addEventListener("dragstart", event => {
 });
 
 /* 最初の表示 */
-updateGallery();
+updatePaintings();
+updateWritings();
