@@ -251,15 +251,15 @@ header nav a {
 
 
 
-/* ATELIER内のメニュー */
-.atelier-menu {
+/* ページ内の共通メニュー */
+.page-menu {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin: 20px 0 40px;
 }
 
-.atelier-menu a {
+.page-menu a {
   display: inline-block;
   padding: 10px 20px;
   border: 1px solid var(--text);
@@ -269,7 +269,8 @@ header nav a {
   transition: 0.2s;
 }
 
-.atelier-menu a:hover {
+.page-menu a:hover {
   background-color: var(--text);
   color: var(--background);
 }
+
