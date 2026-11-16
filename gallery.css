@@ -1,0 +1,19 @@
+
+/* 文章作品 */
+.writing {
+  max-width: 40em;
+  margin: 30px auto;
+}
+
+/* 作品タイトル */
+.writing h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+/* 本文 */
+.writing p {
+  line-height: 1.9;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
