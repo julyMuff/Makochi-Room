@@ -103,8 +103,8 @@ p {
 
 
 /* ========================================
-   06. painting
-   イラスト一覧
+   06. GALLERY
+   作品一覧
 ======================================== */
 
 .painting {
@@ -128,6 +128,80 @@ p {
   padding: 20px;
   font-size: 18px;
   letter-spacing: 0.03em;
+}
+
+/* 絵の一覧 */
+.painting {
+  columns: 2;
+  column-gap: 20px;
+}
+
+/* 文章の一覧 */
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+/* 文章作品のカード */
+.writing-card {
+  min-width: 0;
+  padding: 20px;
+  background-color: white;
+}
+
+.writing-card h3 {
+  margin: 0 0 15px;
+  color: var(--heading);
+  font-size: 20px;
+}
+
+.writing-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+/* 並び替えボタン */
+.gallery-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* ボタン共通 */
+.gallery-controls button,
+.more-button {
+  padding: 8px 16px;
+  border: 1px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* もっと見る */
+.more-button {
+  display: block;
+  margin: 30px auto;
+}
+
+.more-button[hidden] {
+  display: none;
+}
+
+/* スマホでは1列 */
+@media (max-width: 600px) {
+  .painting {
+    columns: 1;
+  }
+
+  .writing-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -162,6 +236,10 @@ p {
   }
 }
 
+/* ========================================
+   06. 
+   更新履歴
+======================================== */
 
 /* 更新履歴全体 */
 .changelog {
