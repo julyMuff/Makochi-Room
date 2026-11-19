@@ -229,7 +229,14 @@ p {
   overflow: hidden;
 }
 
-/* 右側から中央へ歩く */
+
+
+/* 右端に登場する */
+.julyMuff-arriving {
+  transform: translateX(calc(50vw - 50%));
+}
+
+/* 右端から中央へ歩く */
 .julyMuff-walk-in {
   animation: julyMuffWalkIn 4s linear both;
 }
