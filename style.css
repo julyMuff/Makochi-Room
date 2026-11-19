@@ -224,6 +224,26 @@ p {
   image-rendering: pixelated;
 }
 
+/* ｼﾞｭﾘﾏﾌが部屋の外にはみ出さないようにする */
+.julyMuff-room {
+  overflow: hidden;
+}
+
+/* 右側から中央へ歩く */
+.julyMuff-walk-in {
+  animation: julyMuffWalkIn 4s linear both;
+}
+
+@keyframes julyMuffWalkIn {
+  from {
+    transform: translateX(calc(50vw + 100%));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 
 /* ========================================
    08. RESPONSIVE DESIGN
