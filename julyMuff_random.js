@@ -36,8 +36,8 @@ if (julyMuff && message) {
     message.textContent = absentMessage;
     
 　　　// 2秒後にメッセージが変化
-　　　setTimeout(() => {
-　　  message.textContent = "残念！ｼﾞｭﾘﾏﾌはいまはいないみたい……？";
+      setTimeout(() => {
+      message.textContent = "残念！ｼﾞｭﾘﾏﾌはいまはいないみたい……？";
 　}, 2000);
   　  // 5秒後に登場
   　  setTimeout(() => {
