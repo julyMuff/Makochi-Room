@@ -27,7 +27,7 @@ if (chance < 0.45) {
 
   // 2秒後に登場
   setTimeout(() => {
-    julyMuff.src = "julyMuff_arriving.gif";
+    julyMuff.src = "julyMuff_arrival.gif";
     julyMuff.classList.add("julyMuff-arriving");
     julyMuff.style.visibility = "visible";
 
@@ -39,7 +39,7 @@ if (chance < 0.45) {
       // 歩き終わったら中央で停止
       julyMuff.addEventListener("animationend", () => {
         julyMuff.classList.remove("julyMuff-walk-in");
-        julyMuff.src = "julyMuff_stopping.gif";
+        julyMuff.src = "julyMuff_arrival.gif";
 
         // 1.2秒後に眠る
         setTimeout(() => {
@@ -55,17 +55,3 @@ if (chance < 0.45) {
 
   }, 2000);
 }
-
-
-/* 更新履歴を読み込む */
-fetch("./changelog.html")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("更新履歴を読み込めませんでした");
-    }
-    return response.text();
-  })
-  .then(html => {
-    document.getElementById("changelog-container").innerHTML = html;
-  })
-  .catch(error => console.error(error));
