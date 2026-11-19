@@ -50,7 +50,6 @@ if (julyMuff && message) {
         julyMuff.src = imagePath + "julyMuff_walking.gif";
         julyMuff.addEventListener("animationend", () => {
           julyMuff.classList.remove("julyMuff-walk-in");
-          julyMuff.src = imagePath + "julyMuff_stopping.gif";
           // 1.2秒後に眠る
           setTimeout(() => {
             julyMuff.src = imagePath + "julyMuff_sleeping.gif";
