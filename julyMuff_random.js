@@ -2,7 +2,6 @@
 /* ｼﾞｭﾘﾏﾌの表示 */
 
 
-/* ｼﾞｭﾘﾏﾌのランダム表示 */
 
 const julyMuff = document.querySelector(".julyMuff");
 const message = document.querySelector(".julyMuff-message");
@@ -12,7 +11,7 @@ if (julyMuff && message) {
   const imagePath = "images/julyMuff/";
 
   const absentMessage =
-    "残念！ｼﾞｭﾘﾏﾌはいまはいないみたい……。";
+    "残念！ｼﾞｭﾘﾏﾌはいまはいないみたい……";
 
   if (chance < 0.35) {
     // 35%：通常歩き
@@ -35,22 +34,23 @@ if (julyMuff && message) {
     // 10%：いないと思ったら実はいた！
     julyMuff.style.visibility = "hidden";
     message.textContent = absentMessage;
-
-    // 5秒後に登場
-    setTimeout(() => {
+    
+　　　// 2秒後にメッセージが変化
+　　　setTimeout(() => {
+　　  message.textContent = "残念！ｼﾞｭﾘﾏﾌはいまはいないみたい……？";
+　}, 2000);
+  　  // 5秒後に登場
+  　  setTimeout(() => {
       julyMuff.src = imagePath + "julyMuff_arriving.gif";
       julyMuff.classList.add("julyMuff-arriving");
       julyMuff.style.visibility = "visible";
       message.textContent = "";
-
       // 1.6秒後に歩き始める
       setTimeout(() => {
-        julyMuff.src = imagePath + "julyMuff_hopping.gif";
-
+        julyMuff.src = imagePath + "julyMuff_walking.gif";
         julyMuff.addEventListener("animationend", () => {
           julyMuff.classList.remove("julyMuff-walk-in");
           julyMuff.src = imagePath + "julyMuff_stopping.gif";
-
           // 1.2秒後に眠る
           setTimeout(() => {
             julyMuff.src = imagePath + "julyMuff_sleeping.gif";
