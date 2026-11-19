@@ -31,7 +31,7 @@ if (chance < 0.45) {
     julyMuff.classList.add("julyMuff-arriving");
     julyMuff.style.visibility = "visible";
 
-    // 0.8秒後に歩き始める
+    // 1.6秒後に歩き始める
     setTimeout(() => {
       julyMuff.src = "images/julyMuff/julyMuff_hopping.gif";
       julyMuff.classList.remove("julyMuff-arriving");
@@ -51,7 +51,7 @@ if (chance < 0.45) {
 
       julyMuff.classList.add("julyMuff-walk-in");
 
-    }, 800);
+    }, 1600);
 
   }, 2000);
 }
