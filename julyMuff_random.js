@@ -27,7 +27,7 @@ if (chance < 0.45) {
 
   // 2秒後に登場
   setTimeout(() => {
-    julyMuff.src = "julyMuff_arrival.gif";
+    julyMuff.src = "julyMuff_stopping.gif";
     julyMuff.classList.add("julyMuff-arriving");
     julyMuff.style.visibility = "visible";
 
@@ -39,7 +39,7 @@ if (chance < 0.45) {
       // 歩き終わったら中央で停止
       julyMuff.addEventListener("animationend", () => {
         julyMuff.classList.remove("julyMuff-walk-in");
-        julyMuff.src = "julyMuff_arrival.gif";
+        julyMuff.src = "julyMuff_stopping.gif";
 
         // 1.2秒後に眠る
         setTimeout(() => {
