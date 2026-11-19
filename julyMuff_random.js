@@ -1,57 +1,69 @@
 
 /* ｼﾞｭﾘﾏﾌの表示 */
 
-// HTMLから画像と文章を取得する
+
+/* ｼﾞｭﾘﾏﾌのランダム表示 */
+
 const julyMuff = document.querySelector(".julyMuff");
 const message = document.querySelector(".julyMuff-message");
 
-// 0〜1の乱数で抽選
-const chance = Math.random();
+if (julyMuff && message) {
+  const chance = Math.random();
+  const imagePath = "images/julyMuff/";
 
-if (chance < 0.45) {
-  // 45%：通常歩き
-  julyMuff.src = "images/julyMuff/julyMuff_hopping.gif";
-  julyMuff.style.visibility = "visible";
-  message.textContent = "ｼﾞｭﾘﾏﾌは……とっても元気！！";
+  const absentMessage =
+    "残念！ｼﾞｭﾘﾏﾌはいまはいないみたい……。";
 
-} else if (chance < 0.90) {
-  // 45%：通常睡眠
-  julyMuff.src = "images/julyMuff/julyMuff_sleeping.gif";
-  julyMuff.style.visibility = "visible";
-  message.textContent = "ｼﾞｭﾘﾏﾌは……おやすみ中。";
-
-} else {
-  // 10%：特別登場イベント
-  julyMuff.style.visibility = "hidden";
-  message.textContent = "";
-
-  // 2秒後に登場
-  setTimeout(() => {
-    julyMuff.src = "images/julyMuff/julyMuff_stopping.gif";
-    julyMuff.classList.add("julyMuff-arriving");
+  if (chance < 0.35) {
+    // 35%：通常歩き
+    julyMuff.src = imagePath + "julyMuff_hopping.gif";
     julyMuff.style.visibility = "visible";
+    message.textContent = "ｼﾞｭﾘﾏﾌは……とっても元気！！";
 
-    // 1.6秒後に歩き始める
+  } else if (chance < 0.70) {
+    // 35%：通常睡眠
+    julyMuff.src = imagePath + "julyMuff_sleeping.gif";
+    julyMuff.style.visibility = "visible";
+    message.textContent = "ｼﾞｭﾘﾏﾌは……おやすみ中。";
+
+  } else if (chance < 0.90) {
+    // 20%：本当にいない
+    julyMuff.style.visibility = "hidden";
+    message.textContent = absentMessage;
+
+  } else {
+    // 10%：いないと思ったら実はいた！
+    julyMuff.style.visibility = "hidden";
+    message.textContent = absentMessage;
+
+    // 2秒後に登場
     setTimeout(() => {
-      julyMuff.src = "images/julyMuff/julyMuff_hopping.gif";
-      julyMuff.classList.remove("julyMuff-arriving");
+      julyMuff.src = imagePath + "julyMuff_arriving.gif";
+      julyMuff.classList.add("julyMuff-arriving");
+      julyMuff.style.visibility = "visible";
+      message.textContent = "";
 
-      // 歩き終わったら中央で停止
-      julyMuff.addEventListener("animationend", () => {
-        julyMuff.classList.remove("julyMuff-walk-in");
-        julyMuff.src = "images/julyMuff/julyMuff_stopping.gif";
+      // 1.6秒後に歩き始める
+      setTimeout(() => {
+        julyMuff.src = imagePath + "julyMuff_hopping.gif";
 
-        // 1.2秒後に眠る
-        setTimeout(() => {
-          julyMuff.src = "images/julyMuff/julyMuff_sleeping.gif";
-          message.textContent = "ｼﾞｭﾘﾏﾌは……おやすみ中。";
-        }, 1200);
+        julyMuff.addEventListener("animationend", () => {
+          julyMuff.classList.remove("julyMuff-walk-in");
+          julyMuff.src = imagePath + "julyMuff_stopping.gif";
 
-      }, { once: true });
+          // 1.2秒後に眠る
+          setTimeout(() => {
+            julyMuff.src = imagePath + "julyMuff_sleeping.gif";
+            message.textContent = "ｼﾞｭﾘﾏﾌは……おやすみ中。";
+          }, 1200);
 
-      julyMuff.classList.add("julyMuff-walk-in");
+        }, { once: true });
 
-    }, 1600);
+        julyMuff.classList.remove("julyMuff-arriving");
+        julyMuff.classList.add("julyMuff-walk-in");
 
-  }, 2000);
+      }, 1600);
+
+    }, 2000);
+  }
 }
