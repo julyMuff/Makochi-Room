@@ -39,7 +39,7 @@ if (julyMuff && message) {
       setTimeout(() => {
       message.textContent = "残念！ｼﾞｭﾘﾏﾌはいまはいないみたい……？";
 　}, 2000);
-  　  // 5秒後に登場
+  　  // 6秒後に登場
   　  setTimeout(() => {
       julyMuff.src = imagePath + "julyMuff_arriving.gif";
       julyMuff.classList.add("julyMuff-arriving");
@@ -64,6 +64,6 @@ if (julyMuff && message) {
 
       }, 1600);
 
-    }, 5000);
+    }, 6000);
   }
 }
