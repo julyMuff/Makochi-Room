@@ -34,7 +34,7 @@ button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .notice { color: var(--muted); font-size: 12px; margin: 15px 0 0; }
 .surprise[hidden] { display: none; }
 .surprise { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; background: #edd563; overflow: hidden; }
-.surprise img { display: block; width: 100vw; height: 100dvh; object-fit: cover; object-position: center; image-rendering: pixelated; animation: pop-in .25s steps(3,end) both; }
+.surprise img { display: block; width: min(90vw, 90dvh); height: auto; object-fit: contain; object-position: center; image-rendering: pixelated; animation: pop-in .25s steps(3,end) both; }
 .surprise button { position: fixed; bottom: max(15px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); padding: 13px 24px; background: rgba(25,23,28,.86); color: white; border: 1px solid #ffffff80; font-size: 14px; opacity: 0; animation: appear .3s 1s forwards; }
 @keyframes pop-in { from { transform: scale(1.4); } to { transform: scale(1); } }
 @keyframes appear { to { opacity: 1; } }
