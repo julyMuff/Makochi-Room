@@ -1,1 +1,61 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Raleway:wght@400;500;600;700&display=swap');
+/* GAMES だけに適用するスタイル。既存ページの CSS を変更しない。 */
+.games-hub-page {
+  margin: 0;
+  min-height: 100vh;
+  background: #b9a18e;
+  color: #302c29;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.games-hub-page * { box-sizing: border-box; }
+.games-hub-page .games-hub-header { background: #b9a18e; }
+.games-hub-page .games-hub-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  padding: 20px 16px;
+  max-width: 1100px;
+  margin: auto;
+}
+.games-hub-page .games-hub-nav a {
+  display: inline-block;
+  padding: 5px 2px;
+  color: #302c29;
+  font: 600 13px/1.5 'Raleway', sans-serif;
+  letter-spacing: .07em;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.games-hub-page .games-hub-nav a:hover,
+.games-hub-page .games-hub-nav a:focus-visible,
+.games-hub-page .games-hub-nav a[aria-current="page"] {
+  color: #ad7234;
+  border-bottom-color: #ad7234;
+}
+.games-hub-main { width: min(100% - 32px, 940px); margin: 30px auto 70px; }
+.games-hub-title { text-align: center; margin: 0 auto 34px; }
+.games-hub-overline { color: #735545; font: 600 11px/1.6 'Raleway', sans-serif; letter-spacing: .22em; }
+.games-hub-title h1 { font: 600 clamp(30px, 7vw, 46px)/1.2 'Raleway', sans-serif; color: #ad7234; letter-spacing: .12em; margin: 8px 0 12px; }
+.games-hub-title p { font-size: 13px; line-height: 1.8; }
+.games-hub-collection { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.games-hub-card { max-width: 360px; border: 1px solid #846d5d; background: #d9c6b6; transition: transform .15s ease, box-shadow .15s ease; }
+.games-hub-card:hover { transform: translateY(-2px); box-shadow: 0 5px 18px #302c2928; }
+.games-hub-card-link { display: block; color: inherit; text-decoration: none; }
+.games-hub-card-link:focus-visible { outline: 3px solid #ad7234; outline-offset: 3px; }
+.games-hub-preview { height: 210px; display: grid; place-items: center; background: #121017; overflow: hidden; }
+.games-hub-preview img { max-width: 100%; width: 188px; max-height: 188px; height: auto; object-fit: contain; image-rendering: pixelated; }
+.games-hub-card-body { padding: 16px 18px 19px; }
+.games-hub-number { font: 600 11px 'Raleway', sans-serif; letter-spacing: .14em; color: #865b3b; }
+.games-hub-card-body h2 { font-size: 19px; line-height: 1.5; margin: 9px 0 7px; }
+.games-hub-card-body p { font-size: 12px; line-height: 1.8; margin: 0 0 13px; }
+.games-hub-play { color: #85532d; font: 700 12px 'Raleway', sans-serif; letter-spacing: .05em; }
+.games-hub-warning { font-size: 12px; line-height: 1.7; margin: 20px 0; }
+@media (max-width: 500px) {
+ .games-hub-page .games-hub-nav { gap: 5px 15px; padding: 13px 10px; }
+ .games-hub-page .games-hub-nav a { font-size: 12px; }
+ .games-hub-main { margin-top: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .games-hub-card { transition: none; } }

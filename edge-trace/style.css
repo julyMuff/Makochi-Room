@@ -1,0 +1,41 @@
+:root {
+  color-scheme: dark;
+  --background: #16151b;
+  --surface: #27252f;
+  --line: #625f70;
+  --text: #f4f0ea;
+  --muted: #c4c1cc;
+  --accent: #a8ffe0;
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Noto Sans JP', system-ui, sans-serif;
+}
+.game { width: min(100%, 700px); padding: 24px 14px 30px; margin: 0 auto; text-align: center; }
+.eyebrow { font: 700 11px/1.5 ui-monospace, monospace; letter-spacing: .16em; color: var(--accent); }
+h1 { font-size: clamp(22px, 5vw, 30px); margin: 8px 0 10px; letter-spacing: .06em; }
+.instructions { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0 0 18px; }
+.game-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; padding: 10px; box-shadow: 0 12px 40px #0003; }
+.panel-top, .panel-bottom { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 4px 8px 10px; }
+.panel-top { font: 700 12px/1.4 ui-monospace, monospace; letter-spacing: .08em; }
+#status { color: var(--accent); }
+#progress { color: var(--muted); }
+#game { display: block; width: min(100%, 576px); height: auto; margin: 0 auto; background: #000; image-rendering: pixelated; touch-action: none; cursor: crosshair; border: 1px solid #484451; }
+.panel-bottom { padding: 12px 5px 4px; }
+#hint { font-size: 12px; color: var(--muted); text-align: left; }
+button { background: #e4dcd4; color: #27212a; border: none; padding: 9px 14px; border-radius: 5px; font: 700 12px/1.2 inherit; font-weight: 700; cursor: pointer; white-space: nowrap; }
+button:hover { background: white; }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.notice { color: var(--muted); font-size: 12px; margin: 15px 0 0; }
+.surprise[hidden] { display: none; }
+.surprise { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; background: #edd563; overflow: hidden; }
+.surprise img { display: block; width: 100vw; height: 100dvh; object-fit: cover; object-position: center; image-rendering: pixelated; animation: pop-in .25s steps(3,end) both; }
+.surprise button { position: fixed; bottom: max(15px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); padding: 13px 24px; background: rgba(25,23,28,.86); color: white; border: 1px solid #ffffff80; font-size: 14px; opacity: 0; animation: appear .3s 1s forwards; }
+@keyframes pop-in { from { transform: scale(1.4); } to { transform: scale(1); } }
+@keyframes appear { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .surprise img, .surprise button { animation: none; opacity: 1; } }
