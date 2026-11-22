@@ -143,6 +143,7 @@ function fail() {
 function win() {
   phase='clear'; current=goalProgress;lastPointer=null;touchId=null;
   status('CLEAR!','クリア！ やりなおすボタンでもう一度。');render();
+  window.dispatchEvent(new Event('edge-trace:clear'));
 }
 function sample(p) {
   const match=closestOnPath(p,current);
